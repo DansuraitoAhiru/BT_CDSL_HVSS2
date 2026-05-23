@@ -25,10 +25,11 @@ CREATE TABLE Subject (
 
 -- bài 3
 CREATE TABLE Enrollment (
+    enrollmet_id VARCHAR(10) PRIMARY KEY,
     student_id VARCHAR(10),
     subject_id VARCHAR(10),
     enrollment_date DATE NOT NULL,
-    PRIMARY KEY (student_id, subject_id),
+    UNIQUE (student_id, subject_id),
     FOREIGN KEY (student_id) REFERENCES Student(student_id),
     FOREIGN KEY (subject_id) REFERENCES Subject(subject_id)
 );
